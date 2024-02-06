@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{.Values.kaniko.name}}
+spec:
+  containers:
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:latest
+      args:
+        - "--context=git:{{.Values.kaniko.git.repository}}#{{.Values.kaniko.git.branch}}"
+        - "--dockerfile={{.Values.kaniko.git.docker_file_path}}"
+        - "--destination={{.Values.kaniko.image_tag}}"
+      env:
+        - name: GIT_USERNAME
+          value: {{.Values.kaniko.git.username}}
+        - name: GIT_PASSWORD
+          value: {{.Values.kaniko.git.token}}
+      volumeMounts:
+        - name: kaniko-secret
+          mountPath: /kaniko/.docker
+  restartPolicy: Never
+  volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: {{.Values.kaniko.docker_cred_secret}}
+        items:
+          - key: .dockerconfigjson
+            path: config.json
