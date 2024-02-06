@@ -1,10 +1,10 @@
 kaniko:
-  name: ""
-  image_tag: ""
-  docker_cred_secret: ""
+  name:
+  image_tag:
+  docker_cred_secret:
   git:
-    branch: master
+    branch:
     docker_file_path: Dockerfile
-    username: ""
-    token: ""
-    repository: ""
+    username:
+    token:
+    repository:
