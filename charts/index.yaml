@@ -2,7 +2,16 @@ apiVersion: v1
 entries:
   kaniko:
   - apiVersion: v2
-    created: "2024-02-06T16:55:56.24059096+06:00"
+    created: "2024-02-06T17:02:43.666158266+06:00"
+    description: A Helm chart for Kubernetes
+    digest: 9b9e0c0bf4f1a59906962632ad00efc6d8ca630796c2695bf635720d18971251
+    name: kaniko
+    type: application
+    urls:
+    - kaniko-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    created: "2024-02-06T17:02:43.665927888+06:00"
     description: A Helm chart for Kubernetes
     digest: f8799fefa7016490be036ff6b1107fd114a660d19d7ae0defb6701fe9a8c5d74
     name: kaniko
@@ -10,4 +19,4 @@ entries:
     urls:
     - kaniko-0.0.1.tgz
     version: 0.0.1
-generated: "2024-02-06T16:55:56.240365155+06:00"
+generated: "2024-02-06T17:02:43.66568656+06:00"
