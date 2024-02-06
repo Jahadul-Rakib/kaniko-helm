@@ -1,5 +1,4 @@
 kaniko:
-  name:
   image_tag:
   docker_cred_secret:
   git:
